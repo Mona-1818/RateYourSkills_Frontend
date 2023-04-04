@@ -7,7 +7,7 @@ export default function Home (){
         if(!token){
             navigate('/login')
         }
-    },[])
+    })
     return (
         <div>
             <div>Mammal</div>
