@@ -9,7 +9,7 @@ export default function Forget () {
     const [ email, setEmail] = useState('')
     const handlesubmit =() =>{
         console.log(email)
-        axios.post('http://localhost:5000/otp', {
+        axios.post('https://rateyourskills-backend.up.railway.app/otp', {
             email: email
         })
         .then(res=>{

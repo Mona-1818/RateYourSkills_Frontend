@@ -10,7 +10,7 @@ export default function Registration() {
     const [ password, setPassword ] = useState('')
     const handlesubmit =() =>{
         console.log(email,password)
-        axios.post('http://localhost:5000/register', {
+        axios.post('https://rateyourskills-backend.up.railway.app/register', {
             email: email,
             password: password
         })
