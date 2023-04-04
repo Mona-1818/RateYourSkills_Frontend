@@ -30,7 +30,7 @@
 
 .faq_questions {
     display: flex;
-    height: 40vh;
+    height: 50vh;
     justify-content: center;
     align-items: center;
 }
