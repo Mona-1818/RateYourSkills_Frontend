@@ -3,7 +3,7 @@ import Log from './components/mainpage/login/login';
 import Forget from './components/mainpage/login/forget';
 import Registration from './components/mainpage/login/registration';
 import Main from './components/mainpage';
-import Home from './components/mainpage/login/home';
+import Home from './components/homepage/home';
 import NewPass from './components/mainpage/login/newpassword'
 import { Routes , Route} from 'react-router-dom';
 

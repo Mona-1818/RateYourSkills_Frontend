@@ -12,7 +12,8 @@ export default function Log () {
     const navigate = useNavigate();
     const handlesubmit =() =>{
         console.log(email,password)
-        axios.post('https://rateyourskills-backend.up.railway.app/login', {
+        // axios.post('https://rateyourskills-backend.up.railway.app/login', {
+            axios.post('http://localhost:5000/', {
             email: email,
             password: password
         })

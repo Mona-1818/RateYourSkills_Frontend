@@ -1,19 +1,156 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './home.css';
-import logo from './mainpage/homescreen/rys.png';
+// import usericon from './usericon.png';
+import { FaUser } from 'react-icons/fa';
 
 const Home = () => {
-    return (
-        <div>
-            <nav className="navbar">
-                <div className="navbar-logo">
-                    <img src={logo} alt="app logo" />
-                </div>
+    const [open, setOpen] = useState(false);
+    const Menus = ["Profile", "Settings", "Logout"];
 
-                <div className="navbar-login">
-                    {/* <img src={} /> */}
+    return (
+        <div className='home-page'>
+            <div className='home-navbar'>
+                <div className='home-navbar-logo'>
+                    <img src={require('../mainpage/homescreen/rys.png')} alt='logo' />
                 </div>
-            </nav>
+                <div>
+                    <div className='home-navbar-user-icon'> <FaUser size={30} color='#9E11A8' onClick={() => setOpen(!open)} /> </div>
+                    {/* <img src={usericon} alt="user icon"/> */}
+                    {
+                        open && (
+                            <div className='list-items'>
+                                <ul>
+                                    {Menus.map((menu) => (<li onClick={() => setOpen(false)} key={menu}>
+                                        <a href='/#'> {menu} </a>
+                                    </li>))}
+                                </ul>
+                            </div>
+                        )
+                    }
+                </div>
+            </div>
+
+            <div className='home-page-content'>
+                <div className='main'>
+                    <div className='sidebar'>
+                        <div className='screen'>
+                            <div>
+                                <div>
+                                    <div>
+                                        <h3 className='heading'>
+                                            Select Tests
+                                        </h3>
+                                        <div className='search-bar'>
+                                            <div className='searchbar'>
+                                                <div className='search_icon'>
+                                                    <svg width='26' height='26' fill='none' viewBox='0 0 26 26' xmlns='http://www.w3.org/2000/svg'>
+                                                        <circle cx='12.0586' cy='12.0588' r='7.06194' stroke='#3C4852' stoke-width='1.25' strokeLinecap='round' strokeLinejoin='round'></circle>
+                                                        <path d='M21.0033 21.0034L17.0516 17.0518' stroke='#3C4852' stoke-width='1.25' strokeLinecap='round' strokeLinejoin='round'></path>
+                                                    </svg>
+                                                </div>
+                                                <div className='search-content'>
+                                                    <input className='searchcontent' type='text' autoComplete='off' placeholder='Search for your test' ></input>
+                                                </div>
+                                            </div>
+                                            <div className='bg-white'></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='relative'>
+                                <div className=''></div>
+                                <div className='test-container'>
+                                    <div className='test-box'>
+                                        <div className='test-heading'>
+                                            <p> Technical Tests </p>
+                                            <div className='dash'></div>
+                                        </div>
+                                        <div>
+                                            <a href='/#'>
+                                                <div className='selected-test'>
+                                                    <p className='selected-test-heading'> Business Development Test </p>
+                                                    <p className='selected-test-content'> CTC up to 8 LPA • 1000+ Jobs </p>
+                                                </div>
+                                            </a>
+                                            <div className='selected-test-boundary'></div>
+                                        </div>
+                                        <div>
+                                            <a href='/#'>
+                                                <div className='first-test'>
+                                                    <p className='first-test-heading'> Business Analytics Test </p>
+                                                    <p className='first-test-content'> CTC up to 8 LPA • 1000+ Jobs </p>
+                                                </div>
+                                            </a>
+                                            <div className='first-test-boundary'></div>
+                                        </div>
+
+                                        <div>
+                                            <a href='/#'>
+                                                <div className='first-test'>
+                                                    <p className='first-test-heading'> Business Analytics Test </p>
+                                                    <p className='first-test-content'> CTC up to 8 LPA • 1000+ Jobs </p>
+                                                </div>
+                                            </a>
+                                            <div className='first-test-boundary'></div>
+                                        </div>
+                                        <div>
+                                            <a href='/#'>
+                                                <div className='first-test'>
+                                                    <p className='first-test-heading'> Business Analytics Test </p>
+                                                    <p className='first-test-content'> CTC up to 8 LPA • 1000+ Jobs </p>
+                                                </div>
+                                            </a>
+                                            <div className='first-test-boundary'></div>
+                                        </div>
+                                        <div>
+                                            <a href='/#'>
+                                                <div className='first-test'>
+                                                    <p className='first-test-heading'> Business Analytics Test </p>
+                                                    <p className='first-test-content'> CTC up to 8 LPA • 1000+ Jobs </p>
+                                                </div>
+                                            </a>
+                                            <div className='first-test-boundary'></div>
+                                        </div>
+                                        <div>
+                                            <a href='/#'>
+                                                <div className='first-test'>
+                                                    <p className='first-test-heading'> Business Analytics Test </p>
+                                                    <p className='first-test-content'> CTC up to 8 LPA • 1000+ Jobs </p>
+                                                </div>
+                                            </a>
+                                            <div className='first-test-boundary'></div>
+                                        </div>
+
+                                    </div>
+
+                                    <div></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='main-section'>
+                        <div className=''>
+                            <div className='main-section-heading'>
+                                <div className='main-section-heading-content'>
+                                    <div className='main-section-testname'>
+                                        <p> Business Development Test </p>
+                                    </div>
+                                </div>
+                                <div></div>
+                            </div>
+
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
         </div>
     )
 }
