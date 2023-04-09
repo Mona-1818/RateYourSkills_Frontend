@@ -1,52 +1,71 @@
-import React, { useState} from 'react';
+import React, { useEffect, useState} from 'react';
+import validator from 'validator';
 import './login.css';
 import Footer from '../footer/footer';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import ErrorMessage from './error';
 
 export default function Log () {
 
-    const [ email, setEmail] = useState('');
+    const [ email, setEmail ] = useState('');
+    const [ emailError, setEmailError] = useState('');
     const [ password, setPassword ] = useState('');
+    const [ error, setError ] = useState('');
     const navigate = useNavigate();
-    const handlesubmit =() =>{
-        console.log(email,password)
-        // axios.post('https://rateyourskills-backend.up.railway.app/login', {
-            axios.post('http://localhost:5000/', {
-            email: email,
-            password: password
-        })
-        .then(res=>{
-            console.log(res.data)
-            if (res.data.code === 404){
-                alert('user not found');
-            }
-            if (res.data.code === 303){
-                alert('wrong password');
-            }
-            if (res.data.code === 300){
-                navigate('/home')
-                localStorage.setItem("TOKEN", res.data.token)
-                localStorage.setItem("EMAIL", res.data.email)
-            }
-        }).catch(err=>{
-            console.log(err);
-        })
-    }
 
+    useEffect(()=>{
+        const token = localStorage.getItem("TOKEN")
+        if(token){
+            navigate('/home');
+        }
+    });
+
+    const validateEmail = (e) => {
+        var email = e.target.value
+        if (validator.isEmail(email)) {
+            setEmailError('');
+        } else {
+          setEmailError('Enter valid Email!');
+        }
+    }
+    
+    const handlesubmit = async (e) =>{
+        e.preventDefault();
+        try{
+            const config = {
+                headers:{
+                    "Content-type":"application/json"
+                }
+            };
+            await axios.post('http://localhost:5000/login',{
+                email: email,
+                password: password
+            }, config).then(res=>{
+                localStorage.setItem("TOKEN", res.data.token);
+                localStorage.setItem("EMAIL", res.data.email); 
+            }).catch(error =>{
+                setError(error.response.data.message);
+            });
+        } catch(error){
+            setError(error.response.data.message);
+        };
+    };    
     return (<>
         <div className='login'>
             <div className="loginContainer">
+                { error && <ErrorMessage variant="danger">{ error }</ErrorMessage>}
                 <h1> Welcome Back! </h1>
                 <div className="input-container">
+
                     <label> Email ID </label>
-                    <input 
+                    <input type="email" id="email" name="email" value={ email } 
                         onChange ={(e)=>{
+                            validateEmail(e)
                             setEmail(e.target.value)
-                        }}
-                        value={email} 
-                        type="email" name="uname" required />
+                        }} required /> 
+                    <span style={{width:'300px',textAlign:'center',color: 'red'}}>{emailError}</span>   
                     {/* {renderErrorMessage("uname")} */}
                 </div>
                 <div className="input-container">
@@ -58,6 +77,7 @@ export default function Log () {
                         value={password} 
                         type="password" />
                     
+                    
                 </div>
 
                 <div className='forget-password'>
@@ -65,7 +85,7 @@ export default function Log () {
                     <Link to="/register"> Create a new account </Link>
                 </div>
 
-                <button onClick={handlesubmit} className="loginBut">
+                <button type="submit" onClick={handlesubmit} className="loginBut">
                     <p>Login</p>
                 </button>
 
@@ -85,5 +105,4 @@ export default function Log () {
 
         </div>
         </>)
-}
-
+};

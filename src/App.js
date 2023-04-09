@@ -4,9 +4,9 @@ import Forget from './components/mainpage/login/forget';
 import Registration from './components/mainpage/login/registration';
 import Main from './components/mainpage';
 import Home from './components/homepage/home';
-import NewPass from './components/mainpage/login/newpassword'
+import NewPass from './components/mainpage/login/newpassword';
 import { Routes , Route} from 'react-router-dom';
-
+import Question from './components/question/question'
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/newpassword" element={<NewPass />} />
+        <Route path="/question" element={<Question />} />
       </Routes>
       </>
     </div>
