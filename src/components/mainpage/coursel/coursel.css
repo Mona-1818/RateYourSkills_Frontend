@@ -83,14 +83,13 @@
   text-align: center;
 }
 
-a {
+.info a {
   color: #ffffff;
   text-decoration: none;
 }
 
-a:hover {
+.info a:hover {
   border-bottom: 2px solid white;
-
 }
 
 .social svg {
