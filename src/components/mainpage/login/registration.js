@@ -1,25 +1,28 @@
 import React, { useEffect, useState}  from 'react';
 import './registration.css';
 import Footer from '../footer/footer';
-import axios from "axios";
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import validator from 'validator';
 import ErrorMessage from './error';
+import { handleregistrationsubmit } from '../../../action/user';
 
 export default function Registration() {
     const [ email, setEmail] = useState('');
     const [emailError, setEmailError] = useState('');
     const [ password, setPassword ] = useState('');
     const [errorMessage, setErrorMessage] = useState('')
-    const [ error, setError ] = useState('');
+    const dispatch = useDispatch();
     const navigate = useNavigate();
+    const userregister = useSelector((state) => state.USERREGISTER); 
+    const { error, userInfo } = userregister;
 
     useEffect(()=>{
         const token = localStorage.getItem("TOKEN")
         if(token){
             navigate('/home');
         }
-    });
+    },[navigate,userInfo]);
 
     const validateEmail = (e) => {
         var email = e.target.value
@@ -41,33 +44,14 @@ export default function Registration() {
     }
     const handlesubmit = async (e) =>{
         e.preventDefault();
-        try{
-            const config = {
-                headers:{
-                    "Content-type":"application/json"
-                }
-            };
-            await axios.post('http://localhost:5000/register',{
-                email: email,
-                password: password
-            }, config).then(res=>{
-                localStorage.setItem("TOKEN", res.data.token);
-                localStorage.setItem("EMAIL", res.data.email); 
-            }).catch(error =>{
-                setError(error.response.data.message);
-            });
-        } catch(error){
-            setError(error.response.data.message);
-        };
+        dispatch(handleregistrationsubmit(email, password));
     };
-
     return (
         <div className='register'>
             <div className='registerContainer'>
-                { error && <ErrorMessage variant="danger">{ error }</ErrorMessage>}
                 <h1> Sign In </h1>
                 <p> Start Journey With Us! </p>
-
+                { error && <ErrorMessage variant="danger">{ error }</ErrorMessage>}
                 <div className="register-container">
                     <label > Email ID </label>
                     <input type="email"
@@ -113,4 +97,4 @@ export default function Registration() {
             </div>
         </div>
     )
-}
+};

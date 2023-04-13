@@ -3,24 +3,28 @@ import validator from 'validator';
 import './login.css';
 import Footer from '../footer/footer';
 import { Link } from 'react-router-dom';
-import axios from "axios";
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import ErrorMessage from './error';
+import { handleloginsubmit } from '../../../action/user';
 
 export default function Log () {
 
     const [ email, setEmail ] = useState('');
-    const [ emailError, setEmailError] = useState('');
     const [ password, setPassword ] = useState('');
-    const [ error, setError ] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const dispatch = useDispatch();
     const navigate = useNavigate();
+    const userlogin = useSelector((state) => state.USERLOGIN); 
+    const { error, userInfo } = userlogin;
+
 
     useEffect(()=>{
         const token = localStorage.getItem("TOKEN")
         if(token){
             navigate('/home');
         }
-    });
+    }, [navigate,userInfo]);
 
     const validateEmail = (e) => {
         var email = e.target.value
@@ -30,33 +34,20 @@ export default function Log () {
           setEmailError('Enter valid Email!');
         }
     }
-    
-    const handlesubmit = async (e) =>{
+
+    const handlesubmit = async(e) => {
         e.preventDefault();
-        try{
-            const config = {
-                headers:{
-                    "Content-type":"application/json"
-                }
-            };
-            await axios.post('http://localhost:5000/login',{
-                email: email,
-                password: password
-            }, config).then(res=>{
-                localStorage.setItem("TOKEN", res.data.token);
-                localStorage.setItem("EMAIL", res.data.email); 
-            }).catch(error =>{
-                setError(error.response.data.message);
-            });
-        } catch(error){
-            setError(error.response.data.message);
-        };
-    };    
+        dispatch(handleloginsubmit(email, password));
+    }
+    
+    
     return (<>
         <div className='login'>
             <div className="loginContainer">
-                { error && <ErrorMessage variant="danger">{ error }</ErrorMessage>}
+                
                 <h1> Welcome Back! </h1>
+
+                { error && <ErrorMessage variant="danger">{ error }</ErrorMessage>}
                 <div className="input-container">
 
                     <label> Email ID </label>
