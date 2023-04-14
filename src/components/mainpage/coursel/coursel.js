@@ -24,7 +24,7 @@ export default function Carousel() {
                          slidesToScroll: 1,
                          initialSlide: 1,
                          autoplay: true,
-                         arrows:false
+                         arrows: false
                     }
                },
                {
@@ -34,7 +34,7 @@ export default function Carousel() {
                          slidesToScroll: 1,
                          initialSlide: 1,
                          autoplay: true,
-                         arrows:false
+                         arrows: false
                     }
                },
                {
@@ -44,7 +44,7 @@ export default function Carousel() {
                          slidesToScroll: 1,
                          initialSlide: 1,
                          autoplay: true,
-                         arrows:false
+                         arrows: false
                     }
                }
           ]
@@ -59,23 +59,25 @@ export default function Carousel() {
                     </p>
                </div>
 
-               <Slider {...settings}>
-                    {data.map(item => (
-                         <div className="card">
-                              <div className="cardith">
-                                   <div className="image">
-                                        <img src={item.img} alt="react logo" />
-                                   </div>
-                                   <div className="info">
-                                        <h4>Skill : {item.subject}</h4>
-                                        <h3> <FaAward /> <a href={item.firstrank} > {item.first} </a> </h3>
-                                        <h3> <FaAward /> <a href={item.secondrank} > {item.second} </a> </h3>
-                                        <h3> <FaAward /> <a href={item.thridrank} > {item.thrid} </a> </h3>
+               <div className="mainpageCarousel">
+                    <Slider {...settings}>
+                         {data.map(item => (
+                              <div className="card">
+                                   <div className="cardith">
+                                        <div className="image">
+                                             <img src={item.img} alt="react logo" />
+                                        </div>
+                                        <div className="info">
+                                             <h4>Skill : {item.subject}</h4>
+                                             <h3> <FaAward /> <a href={item.firstrank} > {item.first} </a> </h3>
+                                             <h3> <FaAward /> <a href={item.secondrank} > {item.second} </a> </h3>
+                                             <h3> <FaAward /> <a href={item.thridrank} > {item.thrid} </a> </h3>
+                                        </div>
                                    </div>
                               </div>
-                         </div>
-                    ))}
-               </Slider>
+                         ))}
+                    </Slider>
+               </div>
           </div>
      );
 }
