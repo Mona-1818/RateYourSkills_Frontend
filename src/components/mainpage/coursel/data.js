@@ -1,5 +1,6 @@
 export const data = [
 		{
+			_id: 'adobe',
 			subject : 'ADOBE',
 			img : require('./images/Adobe-logo.png'),
 			first : 'rose',
@@ -10,6 +11,7 @@ export const data = [
 			thridrank : '#'
 		},
 		{
+			_id: 'ai',
 			subject : 'ARTIFICAL INTELLIGENCE',
 			img : require('./images/ai-logo.png'),
 			first : 'rose',
@@ -20,6 +22,7 @@ export const data = [
 			thridrank : '#'
 		},
 		{
+			_id: 'angular',
 			subject : 'ANGULAR',
 			img : require('./images/angular-logo.png'),
 			first : 'rose',
@@ -30,6 +33,7 @@ export const data = [
 			thridrank : '#'
 		},
 		{
+			_id: 'autocad',
 			subject : 'AUTOCAD',
 			img : require('./images/autocad-logo.png'),
 			first : 'rose',
@@ -40,6 +44,7 @@ export const data = [
 			thridrank : '#'
 		},
 		{
+			_id: 'aws',
 			img : require('./images/aws-logo.png'),
 			subject : 'AWS',
 			first : 'rose',
@@ -50,6 +55,7 @@ export const data = [
 			thridrank : '#'
 		},
 		{
+			_id: 'azure',
 			img : require('./images/azure-logo.png'),
 			subject : 'AZURE',
 			first : 'rose',
@@ -60,6 +66,7 @@ export const data = [
 			thridrank : '#'
 		},
 		{
+			_id: 'cpp',
 			img : require('./images/c++-logo.png'),
 			subject : 'C++ PROGRAMMING',
 			first : 'rose',
@@ -70,6 +77,7 @@ export const data = [
 			thridrank : '#'
 		},
 		{
+			_id: 'c',
 			img : require('./images/c-logo.png'),
 			subject : 'C PROGRAMMING',
 			first : 'rose',
