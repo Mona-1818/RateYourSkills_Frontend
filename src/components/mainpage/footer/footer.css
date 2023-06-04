@@ -1,16 +1,20 @@
 .footer {
-    width: 100%;
-    background-color: #eee;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: black;
+  background-color: #eeeeee;
 }
 
 .footer_copyright {
-    font-family: Roboto;
+  font-family: Roboto;
 }
 
 .footer_social svg {
-    color: #9E1AA8;
-    margin: 0.5rem;
-    font-size: 25px;
-    cursor: pointer;
+  color: #9e1aa8;
+  margin: 0.5rem;
+  font-size: 25px;
+  cursor: pointer;
 }

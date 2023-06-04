@@ -1,0 +1,100 @@
+.carousel {
+  padding: 2rem 0;
+  margin: 2rem 4rem;
+}
+
+.carousel_heading {
+  margin-top: -30px;
+}
+
+.carousel_heading h1 {
+  color: #9e1aa8;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 32px;
+}
+
+.carousel_heading p {
+  text-align: center;
+  padding: 0 15.5rem;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+  .carousel {
+    margin: 0 0;
+  }
+
+  .carousel p {
+    padding: 0;
+  }
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #9e1aa8;
+}
+
+.image img {
+  width: 200px;
+  height: 200px;
+}
+
+.card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  border-style: none;
+  perspective: 1000px;
+  padding: 0 20px;
+}
+
+.cardith {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .cardith {
+  transform: rotateY(180deg);
+}
+
+.image,
+.info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+}
+
+.image {
+  align-items: center;
+}
+
+.info {
+  background-color: #9e1aa8;
+  color: white;
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.info a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.info a:hover {
+  border-bottom: 2px solid white;
+}
+
+.social svg {
+  color: #ffffff;
+  margin: 0.5rem;
+  font-size: 20px;
+  cursor: pointer;
+}
