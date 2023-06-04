@@ -1,77 +1,77 @@
 .benefit {
-    padding: 2rem 0;
+  padding: 2rem 0;
 }
 
 .benefit_heading {
-    margin-top: -30px;
+  margin-top: -30px;
 }
 
 .benefit_heading h1 {
-    color: #9E1AA8;
-    text-transform: uppercase;
-    text-align: center;
+  color: #9e1aa8;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .benefit_heading p {
-    text-align: center;
-    padding: 0 15.5rem;
+  text-align: center;
+  padding: 0 15.5rem;
 }
 
 @media screen and (max-width: 1000px) {
-    .benefit p {
-        padding: 0;
-    }
+  .benefit p {
+    padding: 0;
+  }
 }
 
 .benefit_points {
-    margin-top: 5rem;
+  margin-top: 5rem;
 }
 
 .benefit_table {
-    margin-right: 5rem;
-    margin-left: 5rem;
+  margin-right: 5rem;
+  margin-left: 5rem;
 }
 @media screen and (min-width: 1150px) {
-    .benefit_table {
-        margin-right: 10rem;
-        margin-left: 10rem;
-    }
+  .benefit_table {
+    margin-right: 10rem;
+    margin-left: 10rem;
+  }
 }
 @media screen and (min-width: 768px) {
-    .benefit_table {
-        row-gap: 2.5rem;
-        column-gap: 2rem;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        display: grid;
-    }
+  .benefit_table {
+    row-gap: 2.5rem;
+    column-gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: grid;
+  }
 }
 
 .benefit_point {
-    position: relative;
+  position: relative;
 }
 
 .benefit_img {
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    display: flex;
-    position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  position: absolute;
 }
 .benefit_content h3 {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .benefit_img img {
-    width: 4rem;
-    height: 4rem;
-    max-width: 100%;
-    display: block;
+  width: 4rem;
+  height: 4rem;
+  max-width: 100%;
+  display: block;
 }
 
 .benefit_content {
-    font-size: 1rem;
-    line-height: 1rem;
-    margin-left: 5rem;
-    margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  margin-left: 5rem;
+  margin-top: 1rem;
 }

@@ -1,70 +1,57 @@
 .Faq {
-    padding: 2rem 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.faq_heading {
-    margin-top: -30px;
+.faq_content {
+  margin: 0 7rem;
 }
 
-.faq_heading h1 {
-    color: #9E1AA8;
-    text-transform: uppercase;
-    text-align: center;
+.faq_head {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #9e1aa8;
+  text-transform: uppercase;
+  font-size: 2rem;
 }
 
 .faq_heading p {
-    text-align: center;
-    padding: 0 15.5rem;
-    padding-bottom: 2rem;
-}
-
-@media screen and (max-width: 1120px) {
-    .faq_heading p {
-        padding: 0;
-    }
-    
-    .accordion {
-        width: 70vh;
-    }
+  color: black;
+  text-align: center;
 }
 
 .faq_questions {
-    display: flex;
-    height: 50vh;
-    justify-content: center;
-    align-items: center;
-}
-
-@media screen and (max-width: 768px) {
-    .accordion {
-        width: 300px;
-    }
+  margin-bottom: 2rem;
 }
 
 .item {
-    background: #eee;
-    margin-bottom: 5px;
-    margin-top: 3px;
-    padding: .5rem 1rem;
+  background: #eee;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: black;
 }
 
 .title {
-    color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
 .content {
-    color: grey;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  color: grey;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
 .content_show {
-    height: auto;
-    max-height: 999px;
-    transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+  height: auto;
+  max-height: 999px;
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
 }
