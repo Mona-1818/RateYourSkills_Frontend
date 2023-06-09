@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./Banner.css";
 // import logo from "./rys.png";
 import logo from "../../../images/rys.png";
-import { FaTimes } from "react-icons/fa";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { NavLink } from "react-router-dom";
+// import { FaTimes } from "react-icons/fa";
+// import { GiHamburgerMenu } from "react-icons/gi";
+// import { NavLink } from "react-router-dom";
 
-const Homescreen = () => {
+const Banner = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
@@ -19,19 +19,21 @@ const Homescreen = () => {
           </div>
 
           <div className="navbar-login">
-            <NavLink to="/login" className="items">
+             {/* <NavLink to="/login" className="items">
               
               Log In / Register
-            </NavLink>
-            <div />
+            </NavLink> 
+            <div />*/}
+            <a href="/login" className="items">
+              Log In / Register
+            </a>
             <a href="/#" className="items">
-              
               Demo Test
             </a>
           </div>
 
           {/* GiHamburger Menu */}
-          <div className="navbar-screen">
+          {/* <div className="navbar-screen">
             <GiHamburgerMenu
               color="#9E1AA8"
               fontSize={27}
@@ -54,8 +56,8 @@ const Homescreen = () => {
                   </li>
                 </ul>
               </div>
-            )}
-          </div>
+            )} 
+          </div>*/}
         </nav>
 
         {/* HomeScreen Content */}
@@ -81,4 +83,4 @@ const Homescreen = () => {
     </div>
   );
 };
-export default Homescreen;
+export default Banner;

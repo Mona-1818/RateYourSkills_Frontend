@@ -1,15 +1,6 @@
 import "./Benefit.css";
 import React from "react";
-import clock from "../../../images/clock.png";
-import fast from "../../../images/fast.png";
-import secure from "../../../images/secure.png";
-import cert from "../../../images/cert.png";
-import ques from "../../../images/add-ques.png";
-// import clock from "./clock.png";
-// import fast from "./fast.png";
-// import secure from "./secure.png";
-// import cert from "./cert.png";
-// import ques from "./add-ques.png";
+import { Benefitdata } from "../../../Data/benedit";
 
 const Benefit = () => {
   return (
@@ -25,7 +16,7 @@ const Benefit = () => {
         </p>
       </div>
 
-      <div className="benefit_points">
+      {/* <div className="benefit_points">
         <div className="benefit_table">
           <div className="benefit_point">
             <div>
@@ -101,10 +92,29 @@ const Benefit = () => {
               </div>
             </div>
           </div>
+        </div> 
+      </div>*/}
+
+      <div className="benefit_points">
+        {Benefitdata.map((item)=>(
+        <div className="benefit_table">
+          <div className="benefit_point">
+            <div>
+              <div className="benefit_img">
+                <img src={item.image} alt="clock" />
+              </div>
+              <div className="benefit_content">
+                <h3> {item.header} </h3>
+                {item.subject}
+              </div>
+            </div>
+          </div>
         </div>
+        ))}
       </div>
+
     </div>
   );
-}
+} 
 
 export default Benefit;

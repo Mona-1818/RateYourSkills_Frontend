@@ -1,4 +1,5 @@
 export const CarouselData = [
+    
     {
         _id: 'adobe',
         subject : 'ADOBE',

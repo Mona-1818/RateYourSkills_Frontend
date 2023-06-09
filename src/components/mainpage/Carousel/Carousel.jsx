@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
-import { CarouselData } from "./CarouselData";
+import { CarouselData } from "../../../Data/CarouselData";
 // import { data } from "./data";
 import { FaAward } from "react-icons/fa";
 import React from "react";

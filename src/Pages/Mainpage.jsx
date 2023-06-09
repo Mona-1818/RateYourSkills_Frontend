@@ -2,13 +2,13 @@
 // import Video from "./mainpage/video/video";
 // import Benefit from "./mainpage/benefit/benefit";
 // import Footer from "../Components/Mainpage/Footer";
-// import Banner from "../Components/Mainpage/Banner/Banner";
+import Banner from "../components/mainpage/Banner/Banner";
 import Video from "../Components/Mainpage/Video/Video";
-// import Benefit from "../Components/Mainpage/Banner/Banner";
+import Benefit from "../components/mainpage/benefit/Benefit";
 
 
-import Footer from "../Components/Mainpage/Footer/Footer";
-// import Carousel from "../Components/Mainpage/Carousel/Carousel";
+import Footer from "../Components/mainpage/footer/Footer";
+import Carousel from "../components/mainpage/Carousel/Carousel";
 import Faq from "../Components/Mainpage/Faq/Faq";
 // import Carousel from "./mainpage/coursel/coursel";
 
@@ -17,14 +17,14 @@ import Faq from "../Components/Mainpage/Faq/Faq";
 export default function Main() {
   return (
     <div>
-      {/* <Banner /> */}
+      <Banner />
       <Video />
-      {/* <Benefit /> */}
-      {/* <section> */}
-        {/* <Carousel /> */}
-      {/* </section> */}
+      <Benefit />
+      <section>
+        <Carousel />
+      </section>
       <Faq />
       <Footer />
-    </div>
+    </div> 
   );
 }

@@ -5,7 +5,8 @@ import {
   USER_REGISTER_FAIL,
   USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
-} from "../Constant/User";
+} from "../Constant/User"; 
+
 import axios from "axios";
 
 export const handleloginsubmit = (email, password) => async (dispatch) => {
